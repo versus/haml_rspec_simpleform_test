@@ -1,6 +1,8 @@
 # coding: utf-8
 class Person < ActiveRecord::Base
-  attr_writer :accepts, :type => Boolean
+  attr_accessor :accepts
+  
+  belongs_to :company
   validates :name,:presence => true,
                   :uniqueness => true
   

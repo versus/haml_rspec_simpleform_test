@@ -1,6 +1,7 @@
 = simple_form_for @person do |f|
-    = f.input :name
+    = f.input :name,:placeholder => 'user@domain.com'
     = f.input :age, :collection => 18..60, :prompt => "Select your age"
     = f.input :zipcode
-    = f.input :accepts
+    = f.association :company
+    = f.input :accepts, :as => :radio
     = f.button :submit

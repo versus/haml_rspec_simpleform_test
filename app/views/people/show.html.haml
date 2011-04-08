@@ -10,6 +10,13 @@
   %b Zipcode:
   = @person.zipcode
 
+%p
+  %b Company:
+  - unless @person.company.nil?
+    = @person.company.name 
+  - else
+    unemployed
+
 = link_to 'Edit', edit_person_path(@person)
 \|
 = link_to 'Back', people_path
